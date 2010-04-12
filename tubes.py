@@ -12,6 +12,7 @@ except ImportError:
 import werkzeug
 from werkzeug import Request
 from werkzeug import Response
+from werkzeug import redirect
 
 # http://www.sfsu.edu/training/mimetype.htm
 BIN  = 'application/octet-stream'

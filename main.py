@@ -10,6 +10,10 @@ handler.register_static_path('/static', 'static/')
 
 PORT = 8080
 
+@handler.get("^/$", accepts=tubes.HTML)
+def index(req):
+    return tubes.redirect('/static/index.html', code=302)
+
 @handler.put("^/task/$", accepts=tubes.JSON)
 def create_task(req, data):
     """create a new Task"""
