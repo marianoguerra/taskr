@@ -1,0 +1,111 @@
+body, div, span{border: 0;}
+body{
+ font-family: arial;
+ font-size: 12pt;
+ color: #555;
+}
+#logo{
+ position: absolute;
+ right: 0;
+ top: 0;
+}
+.form, #tags, #tasks, #priorities{
+ padding: 5px;
+ margin: 5px;
+}
+.tright{
+ margin-left: 5px;
+}
+.tleft{
+ padding: 5px;
+ font-family: arial;
+ font-size: 12pt;
+}
+.form input, .form select{
+ width: 100%;
+ color: #555;
+ border: 1px solid #aaa;
+ background-color: #fff;
+ font-size: 12pt;
+ padding: 0.2em;
+ margin-right: 0.2em;
+ font-family: arial;
+}
+.form button{
+ float: right;
+ width: 10em;
+ font-size: 12pt;
+ padding: 0.2em;
+ cursor: pointer;
+ border: 1px solid #aaa;
+ background-color: #fff;
+ color: #555;
+ font-family: arial;
+}
+#taskdate, #taskhour{
+ width: 7em;
+}
+#errors{
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ color: #d33;
+ margin: 5px;
+ cursor: pointer;
+}
+#messages{
+ position: fixed;
+ left: 0;
+ bottom: 0;
+ color: #33d;
+ margin: 5px;
+ cursor: pointer;
+}
+.tag{
+ text-decoration: none;
+ color: #555;
+ margin-left: 3px;
+ padding: 2px;
+ border: 1px solid #666;
+ background-color: #eee;
+}
+.tag:hover{
+ color: #777;
+}
+#priorities{
+}
+.priority{
+ margin: 2px;
+ padding: 2px;
+ border: 1px solid #666;
+ display: inline;
+ text-decoration: none;
+ color: #333;
+}
+.priority-5{
+ background-color: #ddd;
+}
+.priority-4{
+ background-color: #FCFF94;
+}
+.priority-3{
+ background-color: #FFBF31;
+}
+.priority-2{
+ background-color: #FF6B4C;
+}
+.priority-1{
+ background-color: #FF3531;
+}
+.task{
+ margin: 0.1em;
+ padding: 5px;
+ display: table;
+ width: 100%;
+}
+.tags-by-task{
+ float: right;
+}
+.tag-desc{
+ float: left;
+}
