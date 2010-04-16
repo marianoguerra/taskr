@@ -1,4 +1,39 @@
 var Taskr = {};
+
+String.prototype.trim = function () {
+    return this.replace(/^\s*|\s*$/g, "");
+};
+
+Taskr.stringFromTags = function (tags) {
+    var strings, index;
+    if (tags === undefined || tags === null) {
+        return '';
+    }
+
+    strings = [];
+
+    for (index in tags) {
+        strings.push(tags[index].name);
+    }
+
+    return strings.join(', ');
+};
+
+Taskr.tagsFromString = function (str) {
+    var values, index, tags, tag;
+    values = str.split(/\s*,\s*/);
+    tags = [];
+    for (index in values) {
+        tag = values[index].trim();
+        if(tag !== ""){
+            tags.push(Taskr.Tag(tag));
+        }
+    }
+
+    return tags;
+};
+
+
 Taskr.gui = {};
 Taskr.gui.showError = function(message){
     $("#errors").html(message);

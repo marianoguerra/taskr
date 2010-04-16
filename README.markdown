@@ -11,7 +11,7 @@ a simple task manager as an example of multiple python technologies
 
 on debian based systems (change the package manager of your choice)
 
-@sudo aptitude install python-sqlalchemy python-simplejson python-werkzeug@
+sudo aptitude install python-sqlalchemy python-simplejson python-werkzeug
 
 ### clone the repository with the latest code
 git clone git://github.com/marianoguerra/taskr.git
