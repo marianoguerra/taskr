@@ -14,14 +14,14 @@ PORT = 8080
 def index(req):
     return tubes.redirect('/static/index.html', code=302)
 
-@handler.put("^/task/$", accepts=tubes.JSON)
+@handler.post("^/task/$", accepts=tubes.JSON)
 def create_task(req, data):
     """create a new Task"""
     task = model.Task.from_dict(data)
     identifier = model.manager.create(task)
     return model.manager.to_dict(task)
 
-@handler.post("^/task/$", accepts=tubes.JSON)
+@handler.put("^/task/$", accepts=tubes.JSON)
 def modify_task(req, data):
     """modify an existing Task"""
     task = model.Task.from_dict(data)
