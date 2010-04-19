@@ -26,8 +26,9 @@ class TaskrWindow(QtGui.QMainWindow):
         date = datetime.datetime.today()
         qdate = QtCore.QDate(date.year, date.month, date.day)
         self.ui.dateEdit.setDate(qdate)
-        #Config Table
-        self.ui.table.setSortingEnabled(True)
+        #Config Table Header Date Width
+        self.ui.table.setColumnWidth(0, 70)
+        self.ui.table.setColumnWidth(1, 170)
         #Load Elements content
         self._load_list_tags()
         self._load_table_tasks()
@@ -119,7 +120,7 @@ class TaskrWindow(QtGui.QMainWindow):
             date = datetime.datetime.fromtimestamp(task.end)
             item = QtGui.QTableWidgetItem(date.strftime("%d. %B %Y - %H:%M"))
             item.setBackgroundColor(color)
-            item.setFlags( QtCore.Qt.ItemIsSelectable |  QtCore.Qt.ItemIsEnabled )
+            item.setFlags( QtCore.Qt.ItemIsSelectable |  QtCore.Qt.ItemIsEnabled)
             self.ui.table.setItem(r, 1, item)
             #Column 2
             item = QtGui.QTableWidgetItem(task.name)
@@ -182,6 +183,15 @@ class TaskrWindow(QtGui.QMainWindow):
         tags = [t.name for t in tags]
         tagsToAdd = [t for t in tags if t not in actualTags]
         self.ui.listTags.addItems(tagsToAdd)
+        
+    def resizeEvent(self, event):
+        height = self.height()
+        width = self.width()
+        self.ui.line.setFixedWidth(width-16)
+        self.ui.lblIcon.setFixedWidth(width-406)
+        self.ui.listTags.setFixedHeight(height-349)
+        self.ui.table.setFixedWidth(width-156)
+        self.ui.table.setFixedHeight(height-259)
         
 
 app = QtGui.QApplication(sys.argv)

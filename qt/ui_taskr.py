@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_taskr.ui'
 #
-# Created: Sun Apr 18 17:13:55 2010
+# Created: Mon Apr 19 11:45:21 2010
 #      by: PyQt4 UI code generator 4.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -71,6 +71,7 @@ class Ui_Taskr(object):
         self.btnCreate.setObjectName("btnCreate")
         self.table = QtGui.QTableWidget(Taskr)
         self.table.setGeometry(QtCore.QRect(150, 250, 531, 221))
+        self.table.setSelectionMode(QtGui.QAbstractItemView.SingleSelection)
         self.table.setObjectName("table")
         self.table.setColumnCount(5)
         self.table.setRowCount(0)
@@ -84,6 +85,7 @@ class Ui_Taskr(object):
         self.table.setHorizontalHeaderItem(3, item)
         item = QtGui.QTableWidgetItem()
         self.table.setHorizontalHeaderItem(4, item)
+        self.table.horizontalHeader().setStretchLastSection(True)
         self.listTags = QtGui.QListWidget(Taskr)
         self.listTags.setGeometry(QtCore.QRect(10, 340, 131, 131))
         self.listTags.setObjectName("listTags")
@@ -144,9 +146,10 @@ class Ui_Taskr(object):
         self.verticalLayout.addLayout(self.horizontalLayout_5)
         self.lblIcon = QtGui.QLabel(Taskr)
         self.lblIcon.setGeometry(QtCore.QRect(380, 10, 281, 181))
+        self.lblIcon.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lblIcon.setObjectName("lblIcon")
         self.btnClean = QtGui.QPushButton(Taskr)
-        self.btnClean.setGeometry(QtCore.QRect(50, 180, 141, 27))
+        self.btnClean.setGeometry(QtCore.QRect(140, 180, 51, 27))
         self.btnClean.setObjectName("btnClean")
 
         self.retranslateUi(Taskr)
@@ -166,6 +169,7 @@ class Ui_Taskr(object):
         self.comboPrio.setItemText(4, QtGui.QApplication.translate("Taskr", "5", None, QtGui.QApplication.UnicodeUTF8))
         self.label_5.setText(QtGui.QApplication.translate("Taskr", "tags:", None, QtGui.QApplication.UnicodeUTF8))
         self.btnCreate.setText(QtGui.QApplication.translate("Taskr", "Create!", None, QtGui.QApplication.UnicodeUTF8))
+        self.table.setSortingEnabled(True)
         self.table.horizontalHeaderItem(0).setText(QtGui.QApplication.translate("Taskr", "Finished", None, QtGui.QApplication.UnicodeUTF8))
         self.table.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("Taskr", "Date", None, QtGui.QApplication.UnicodeUTF8))
         self.table.horizontalHeaderItem(2).setText(QtGui.QApplication.translate("Taskr", "Name", None, QtGui.QApplication.UnicodeUTF8))
