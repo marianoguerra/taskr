@@ -2,6 +2,10 @@
 
 a simple task manager as an example of multiple python technologies
 
+## status
+
+stalled, it's just an example, if you have improvements, fork it and send pull requests
+
 ## requirements
 
 * python >= 2.5
